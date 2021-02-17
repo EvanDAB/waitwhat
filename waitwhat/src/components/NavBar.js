@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <BrowserRouter ref={this.routerRef}>
-                <Row className=''>
+                <Row id='navbar-band'>
                     <Navbar ref={this.navbarRef}>
                         <Col className='justify-content-left' md={4}>
                         </Col>
