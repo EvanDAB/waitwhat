@@ -169,7 +169,7 @@ class MusicPlayer extends React.Component {
             
             <div ref={ref => this.timelineRef = ref} id="timeline">
               <div ref={ref => this.playheadRef = ref} id="playhead"></div>
-              <div ref={ref => this.hoverPlayheadRef = ref} class="hover-playhead" data-content="0:00"></div>
+              <div ref={ref => this.hoverPlayheadRef = ref} className="hover-playhead" data-content="0:00"></div>
             </div>
             
             <div className="controls">
@@ -178,7 +178,7 @@ class MusicPlayer extends React.Component {
               <button onClick={this.playOrPause} className="play current-btn">
                 {
                   (!pause) ? <i className="fas fa-play"></i>
-                  :<i class="fas fa-pause"></i>
+                  :<i className="fas fa-pause"></i>
                 }
               </button>
               <button onClick={this.nextSong} className="next prev-next current-btn"><i className="fas fa-forward"></i></button>
@@ -187,25 +187,25 @@ class MusicPlayer extends React.Component {
           </div>
           <div className="play-list" >
             {musicList.map( (music, key=0) =>
-                           <div key={key} 
-                             onClick={()=>this.clickAudio(key)}
-                             className={"track " + 
-                               (index === key && !pause ?'current-audio':'') + 
-                               (index === key && pause ?'play-now':'')} >
-                             
-                             <img className="track-img" src={music.img}/>
-                             <div className="track-discr" >
-                               <span className="track-name" >{music.name}</span>
-                               <span className="track-author" >{music.author}</span>
-                             </div>
-                             <span className="track-duration" >
-                               {(index === key)
-                                 ?currentTime
-                                 :music.duration
-                               }
-                             </span>
-                           </div>
-                          )}
+                <div key={key} 
+                    onClick={()=>this.clickAudio(key)}
+                    className={"track " + 
+                    (index === key && !pause ?'current-audio':'') + 
+                    (index === key && pause ?'play-now':'')} >
+                    
+                    <img className="track-img" src={music.img}/>
+                    <div className="track-discr" >
+                    <span className="track-name" >{music.name}</span>
+                    <span className="track-author" >{music.author}</span>
+                    </div>
+                    <span className="track-duration" >
+                    {(index === key)
+                        ?currentTime
+                        :music.duration
+                    }
+                    </span>
+                </div>
+            )}
           </div>
         </div>
       )

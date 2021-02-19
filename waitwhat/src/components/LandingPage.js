@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, ResponsiveEmbed } from 'react-bootstrap';
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-import InstagramEmbed from 'react-instagram-embed';
+import Feed from 'react-instagram-authless-feed';
 import MusicPlayer from './MusicPlayer';
 
 class LandingPage extends React.Component {
@@ -23,19 +23,6 @@ class LandingPage extends React.Component {
                 </Row>
                 <Row id='social-section'>
                     <Col id='instagram'>
-                        <InstagramEmbed
-                            url='https://www.instagram.com/itswaitwhat/'
-                            clientAccessToken='123|456'
-                            maxWidth={320}
-                            hideCaption={false}
-                            containerTagName='div'
-                            protocol=''
-                            injectScript
-                            onLoading={() => {}}
-                            onSuccess={() => {}}
-                            onAfterRender={() => {}}
-                            onFailure={() => {}}
-                        />
                     </Col>
                     <Col id='twitter'>
                         <TwitterTimelineEmbed

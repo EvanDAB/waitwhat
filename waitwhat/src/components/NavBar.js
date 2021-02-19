@@ -45,6 +45,10 @@ class NavBar extends React.Component {
                 </Row>
                 <Switch>
                     <Route exact path='' component={LandingPage}/>
+                    {/* <Route exact path='/music' component={MusicPage}/>
+                    <Route exact path='/resources' component={ResourcesPage}/>
+                    <Route exact path='/bio' component={BioPage}/>
+                    <Route exact path='/press' component={PressKitPage}/> */}
                 </Switch>
             </BrowserRouter>
             
