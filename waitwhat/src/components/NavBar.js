@@ -1,8 +1,17 @@
 import React from 'react';
-import logo from '../waitwhattext.png';
+import logo from '../icons/waitwhattext.png';
+import fbLogo from '../icons/facebook-logo.png';
+import igLogo from '../icons/instagram-logo.png';
+import twitterLogo from '../icons/twitter-logo.png';
+import twitchLogo from '../icons/twitch-logo.png';
+import spotifyLogo from '../icons/spotify-logo.png';
+import soundcloudLogo from '../icons/soundcloud-logo.gif';
 import { Nav, Navbar, NavDropdown, Row, Col,  } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap'
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import LandingPage from './LandingPage';
+import MusicPage from './MusicPage';
+
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -15,36 +24,17 @@ class NavBar extends React.Component {
             <BrowserRouter ref={this.routerRef}>
                 <Row id='navbar-container'>
                     <Navbar ref={this.navbarRef}>
-                        <Col className='justify-content-left' md={4}>
-                            <Navbar.Toggle aria-controls='basic-navbar-nav' />
-                            <Navbar.Collapse id='basic-navbar-nav'>
-                                <Nav className='mr-auto'>
-                                    <Nav.Link href='#spotify'>Spotify</Nav.Link>
-                                    <Nav.Link href='#Soundcloud'>Soundcloud</Nav.Link>
-                                    <Nav.Link href='#Instagram'>Instagram</Nav.Link>
-                                    <Nav.Link href='#Twitter'>Twitter</Nav.Link>
-                                    <Nav.Link href='#Twitch'>Twitch</Nav.Link>
-                                    <Nav.Link href='#Facebook'>Facebook</Nav.Link>
-                                </Nav>
-                            </Navbar.Collapse>
-                        </Col>
-                        <Col md={4}>
-                            <Navbar.Brand className='justify-content-center' href=''>
-                                <img
-                                alt='“Wait, what?” is at the root of all understanding.'
-                                src={logo}
-                                width='80%'
-                                height='50%'
-                                />
-                            </Navbar.Brand>
-                        </Col>
                         <Col className='justify-content-right' md={4}>
                             <Navbar.Toggle aria-controls='basic-navbar-nav' />
                             <Navbar.Collapse id='basic-navbar-nav'>
-                                <Nav className='ml-auto'>
+                                <Nav className='mr-auto'>
                                     <NavDropdown title='Music' id='basic-nav-dropdown'>
-                                        <NavDropdown.Item href='#music/original'>Our Music</NavDropdown.Item>
-                                        <NavDropdown.Item href='#music/resources'>Resources</NavDropdown.Item>
+                                        <LinkContainer to='/music'>
+                                            <NavDropdown.Item >Our Music</NavDropdown.Item>
+                                        </LinkContainer> 
+                                        <LinkContainer to='/resources'>
+                                            <NavDropdown.Item>Resources</NavDropdown.Item>
+                                        </LinkContainer>  
                                     </NavDropdown>
                                     <Nav.Link href='#merch'>Merch</Nav.Link>
                                     <Nav.Link href='#bio'>Bio</Nav.Link>
@@ -52,12 +42,49 @@ class NavBar extends React.Component {
                                 </Nav>
                             </Navbar.Collapse>
                         </Col>
+                        <Col>
+                            <LinkContainer to='' >
+                                <Navbar.Brand className='justify-content-center' href=''>
+                                    <img
+                                    alt='“Wait, what?” is at the root of all understanding.'
+                                    src={logo}
+                                    width='80%'
+                                    height='50%'
+                                    />
+                                </Navbar.Brand>
+                            </LinkContainer>
+                        </Col>
+                        <Col className='justify-content-left' md={4}>
+                            <Navbar.Toggle aria-controls='basic-navbar-nav' />
+                            <Navbar.Collapse id='basic-navbar-nav'>
+                                <Nav className='ml-auto'>
+                                    <Nav.Link  href='https://open.spotify.com/artist/0OkO3dCZRJQlXEy8kTwoox'>
+                                        <img className='social-icon' src={spotifyLogo}/>
+                                    </Nav.Link>
+                                    <Nav.Link href='https://soundcloud.com/itswaitwhat'>
+                                        <img className='social-icon' src={soundcloudLogo}/>
+                                    </Nav.Link>
+                                    <Nav.Link href='https://www.instagram.com/itswaitwhat/'>
+                                        <img className='social-icon' src={igLogo}/>
+                                    </Nav.Link>
+                                    <Nav.Link href='https://twitter.com/itswaitwhat'>
+                                        <img className='social-icon' src={twitterLogo}/>
+                                    </Nav.Link>
+                                    <Nav.Link href='https://www.twitch.tv/itswaitwhat'>
+                                        <img className='social-icon' src={twitchLogo}/>
+                                    </Nav.Link>
+                                    <Nav.Link href='https://www.facebook.com/itswaitwhat'>
+                                        <img className='social-icon' src={fbLogo}/>
+                                    </Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Col>
                     </Navbar>
                 </Row>
                 <Switch>
-                    <Route exact path='' component={LandingPage}/>
-                    {/* <Route exact path='/music' component={MusicPage}/>
-                    <Route exact path='/resources' component={ResourcesPage}/>
+                    <Route exact path='/' component={LandingPage}/>
+                    <Route exact path='/music' component={MusicPage}/>
+                    {/* <Route exact path='/resources' component={ResourcesPage}/>
                     <Route exact path='/bio' component={BioPage}/>
                     <Route exact path='/press' component={PressKitPage}/> */}
                 </Switch>
