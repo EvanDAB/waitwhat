@@ -13,9 +13,20 @@ class NavBar extends React.Component {
     render() {
         return (
             <BrowserRouter ref={this.routerRef}>
-                <Row id='navbar-band'>
+                <Row id='navbar-container'>
                     <Navbar ref={this.navbarRef}>
                         <Col className='justify-content-left' md={4}>
+                            <Navbar.Toggle aria-controls='basic-navbar-nav' />
+                            <Navbar.Collapse id='basic-navbar-nav'>
+                                <Nav className='mr-auto'>
+                                    <Nav.Link href='#spotify'>Spotify</Nav.Link>
+                                    <Nav.Link href='#Soundcloud'>Soundcloud</Nav.Link>
+                                    <Nav.Link href='#Instagram'>Instagram</Nav.Link>
+                                    <Nav.Link href='#Twitter'>Twitter</Nav.Link>
+                                    <Nav.Link href='#Twitch'>Twitch</Nav.Link>
+                                    <Nav.Link href='#Facebook'>Facebook</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
                         </Col>
                         <Col md={4}>
                             <Navbar.Brand className='justify-content-center' href=''>
