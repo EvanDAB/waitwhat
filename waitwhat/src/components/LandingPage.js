@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, ResponsiveEmbed } from 'react-bootstrap';
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-import Feed from 'react-instagram-authless-feed';
 import MusicPlayer from './MusicPlayer';
 import ImageGallery from './ImageGallery';
 
@@ -21,11 +20,8 @@ class LandingPage extends React.Component {
                 </Row>
                 <Row id='image-gallery'>
                     <Col><ImageGallery/></Col>
-                    <span>Image Grid</span>
                 </Row>
                 <Row id='social-section'>
-                    <Col id='instagram'>
-                    </Col>
                     <Col id='twitter'>
                         <TwitterTimelineEmbed
                             sourceType="profile"
@@ -36,12 +32,11 @@ class LandingPage extends React.Component {
                     <Col>
                         <h4 className='heading-text'>upcoming shows</h4>
                         <p>No Shows scheduled as of now</p>
-
                         <h4 className='heading-text'>previous shows</h4>
                     </Col>
                 </Row>
                 <Row id='sign-up-section'>
-                <Col></Col>
+                    <Col></Col>
                 </Row>
             </div>
         );

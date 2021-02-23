@@ -142,7 +142,9 @@ audio{
   border-radius: 5px;
   cursor: pointer;
 }
-
+p {
+  color: white;
+}
 /* IN SCSS Form, to be converted to CSS Later
 &:hover{
   .hover-playhead{

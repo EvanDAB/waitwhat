@@ -7,10 +7,13 @@ import twitchLogo from '../content/icons/twitch-logo.png';
 import spotifyLogo from '../content/icons/spotify-logo.png';
 import soundcloudLogo from '../content/icons/soundcloud-logo.gif';
 import { Nav, Navbar, NavDropdown, Row, Col,  } from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import LandingPage from './LandingPage';
 import MusicPage from './MusicPage';
+import BioPage from './BioPage';
+import PressKitPage from './PressKitPage';
+import AdminPage from './AdminPage';
 
 
 class NavBar extends React.Component {
@@ -37,8 +40,12 @@ class NavBar extends React.Component {
                                         </LinkContainer>  
                                     </NavDropdown>
                                     <Nav.Link href='#merch'>Merch</Nav.Link>
-                                    <Nav.Link href='#bio'>Bio</Nav.Link>
-                                    <Nav.Link href='#pressKit'>Press Kit</Nav.Link>
+                                    <LinkContainer to='/bio'>
+                                        <Nav.Link>Bio</Nav.Link>
+                                    </LinkContainer>
+                                    <LinkContainer to='/press'>
+                                        <Nav.Link>Press Kit</Nav.Link>
+                                    </LinkContainer>
                                 </Nav>
                             </Navbar.Collapse>
                         </Col>
@@ -84,6 +91,9 @@ class NavBar extends React.Component {
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
                     <Route exact path='/music' component={MusicPage}/>
+                    <Route exact path='/bio' component={BioPage}/>
+                    <Route exact path='/press' component={PressKitPage}/>
+                    <Route exact path='/admin' component={AdminPage}/>
                     {/* <Route exact path='/resources' component={ResourcesPage}/>
                     <Route exact path='/bio' component={BioPage}/>
                     <Route exact path='/press' component={PressKitPage}/> */}
