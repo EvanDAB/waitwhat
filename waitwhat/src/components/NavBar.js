@@ -13,6 +13,7 @@ import LandingPage from './LandingPage';
 import MusicPage from './MusicPage';
 import BioPage from './BioPage';
 import PressKitPage from './PressKitPage';
+import ResourcesPage from './ResourcesPage';
 import AdminPage from './AdminPage';
 
 
@@ -91,12 +92,10 @@ class NavBar extends React.Component {
                 <Switch>
                     <Route exact path='/' component={LandingPage}/>
                     <Route exact path='/music' component={MusicPage}/>
+                    <Route exact path='/resources' component={ResourcesPage}/>
                     <Route exact path='/bio' component={BioPage}/>
                     <Route exact path='/press' component={PressKitPage}/>
                     <Route exact path='/admin' component={AdminPage}/>
-                    {/* <Route exact path='/resources' component={ResourcesPage}/>
-                    <Route exact path='/bio' component={BioPage}/>
-                    <Route exact path='/press' component={PressKitPage}/> */}
                 </Switch>
             </BrowserRouter>
             

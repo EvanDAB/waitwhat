@@ -10,13 +10,13 @@ class ResourcesPage extends React.Component {
                 </Row>
                 <Row>
                     <Col>
-                        <ResponsiveEmbed>
-                            <iframe src="https://youtu.be/IyjlRiNiLBg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <ResponsiveEmbed aspectRatio='16by9'>
+                            <iframe src="https://www.youtube.com/embed/IyjlRiNiLBg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </ResponsiveEmbed>
                     </Col>
                     <Col>
-                        <ResponsiveEmbed>
-                        <iframe src="https://youtu.be/QLYK9mIw9s8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <ResponsiveEmbed aspectRatio='16by9'>
+                            <iframe src="https://www.youtube.com/embed/QLYK9mIw9s8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </ResponsiveEmbed>
                     </Col>
                 </Row>
@@ -24,3 +24,5 @@ class ResourcesPage extends React.Component {
         )
     }
 }
+
+export default ResourcesPage;
