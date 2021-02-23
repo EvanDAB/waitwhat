@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../icons/waitwhattext.png';
-import fbLogo from '../icons/facebook-logo.png';
-import igLogo from '../icons/instagram-logo.png';
-import twitterLogo from '../icons/twitter-logo.png';
-import twitchLogo from '../icons/twitch-logo.png';
-import spotifyLogo from '../icons/spotify-logo.png';
-import soundcloudLogo from '../icons/soundcloud-logo.gif';
+import logo from '../content/icons/waitwhattext.png';
+import fbLogo from '../content/icons/facebook-logo.png';
+import igLogo from '../content/icons/instagram-logo.png';
+import twitterLogo from '../content/icons/twitter-logo.png';
+import twitchLogo from '../content/icons/twitch-logo.png';
+import spotifyLogo from '../content/icons/spotify-logo.png';
+import soundcloudLogo from '../content/icons/soundcloud-logo.gif';
 import { Nav, Navbar, NavDropdown, Row, Col,  } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap'
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";

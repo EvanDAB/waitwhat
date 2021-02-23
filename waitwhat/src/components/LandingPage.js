@@ -14,8 +14,8 @@ class LandingPage extends React.Component {
                             <iframe src="https://www.youtube.com/embed/EtzXluKcwSU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </ResponsiveEmbed>
                     </Col>
-                    <Col>
-                        <MusicPlayer />
+                    <Col className='music-player-container'>
+                            <MusicPlayer />
                     </Col>
                 </Row>
                 <Row id='image-gallery'>
