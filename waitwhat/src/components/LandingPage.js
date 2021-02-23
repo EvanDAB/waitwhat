@@ -3,6 +3,7 @@ import { Row, Col, ResponsiveEmbed } from 'react-bootstrap';
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import Feed from 'react-instagram-authless-feed';
 import MusicPlayer from './MusicPlayer';
+import ImageGallery from './ImageGallery';
 
 class LandingPage extends React.Component {
     render() {
@@ -19,7 +20,8 @@ class LandingPage extends React.Component {
                     </Col>
                 </Row>
                 <Row id='image-gallery'>
-                    <Col></Col>
+                    <Col><ImageGallery/></Col>
+                    <span>Image Grid</span>
                 </Row>
                 <Row id='social-section'>
                     <Col id='instagram'>

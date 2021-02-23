@@ -9,7 +9,8 @@ class MusicPlayer extends React.Component {
         {
             name:'Alive (ft Rielle)',  
             img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
-            audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', duration: '3:27'
+            audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
+            duration: '3:27',
         }, 
         {
             name:'Fall out Boy - Sugar We\'re Going Down (waitwhat & SEPPIE remix))',  
@@ -69,7 +70,17 @@ class MusicPlayer extends React.Component {
         {
             name:'Do You Remember(feat Daramola)',  
             img: 'https://i1.sndcdn.com/artworks-GOLQv9uzxzqjtq39-6pogUg-t500x500.jpg', 
-            audio:'https://soundcloud.com/itswaitwhat/do-you-remember', duration: '2:34'
+            audio:'https://soundcloud.com/itswaitwhat/do-you-remember', 
+            duration: '2:34',
+            info: {
+                // ftArtist: {
+                //     name: 'Daramola',
+                //     socials: [
+                //         spotify
+                //     ]
+                // },
+                inspiration: 'so this is probably our gushiest, poppiest song yet and we love it lol. Daramola provided some excellent, catchy vocals (vocoder and all!) that were a ton of fun to work with. the beat for this track features a ton of different samples of Troy playing an old Korg Kaossilator KO-1 that Damon dug up in his garage, which gives the whole song a very unique texture. overall this one turned out super chill and groovy, and we hope you dig it :)'
+            }
         }, 
 ],
       pause: false,
