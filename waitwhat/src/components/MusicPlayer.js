@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 class MusicPlayer extends React.Component {
     state = {
@@ -236,38 +236,47 @@ class MusicPlayer extends React.Component {
                 </Col>
                 
             </div>
-            <div className="current-song">
+            <Row>
+              <div className="current-song">
                 <audio ref={ref => this.playerRef = ref}>
-                <source src={ currentSong.audio } type="audio/ogg"/>
-                    Your browser does not support the audio element.
+                  <source src={ currentSong.audio } type="audio/ogg"/>
+                  Your browser does not support the audio element.
                 </audio>
-                <div className="img-wrap">
-                    <img id="current-song-img" src={ currentSong.img }/>
-                </div>
-                <span className="song-name">{ currentSong.name }</span>
-                <div className="time">
-                <div className="current-time">{ currentTime }</div>
-                <div className="end-time">{ currentSong.duration }</div>
-                </div>
+                <Col>
+                  <div className="img-wrap">
+                      <img id="current-song-img" src={ currentSong.img }/>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="song-name">{ currentSong.name }</div>
+                </Col>
+                <Col>
+                  <div className="time">
+                    <div className="current-time">{ currentTime }</div>
+                    <div className="end-time">{ currentSong.duration }</div>
+                  </div>
+                </Col>
+                
                 
                 <div ref={ref => this.timelineRef = ref} id="timeline">
-                <div ref={ref => this.playheadRef = ref} id="playhead"></div>
-                <div ref={ref => this.hoverPlayheadRef = ref} className="hover-playhead" data-content="0:00"></div>
+                  <div ref={ref => this.playheadRef = ref} id="playhead"></div>
+                  <div ref={ref => this.hoverPlayheadRef = ref} className="hover-playhead" data-content="0:00"></div>
                 </div>
                 
                 <div className="controls">
-                <button onClick={this.prevSong} className="prev prev-next current-btn"><i className="fas fa-backward"></i></button>
-                <button onClick={this.playOrPause} className="play current-btn">
-                    {
-                    (!pause) ? <i className="fas fa-play"></i>
-                    :<i className="fas fa-pause"></i>
-                    }
-                </button>
-                <button onClick={this.nextSong} className="next prev-next current-btn"><i className="fas fa-forward"></i></button>
+                  <button onClick={this.prevSong} className="prev prev-next current-btn"><i className="fas fa-backward"></i></button>
+                  <button onClick={this.playOrPause} className="play current-btn">
+                      {
+                      (!pause) ? <i className="fas fa-play"></i>
+                      :<i className="fas fa-pause"></i>
+                      }
+                  </button>
+                  <button onClick={this.nextSong} className="next prev-next current-btn"><i className="fas fa-forward"></i></button>
                 </div>
-                
-            </div>
-            {/* <div className="play-list" >
+              </div>
+            </Row>
+
+            <div className="play-list" >
                 {musicList.map( (music, key=0) =>
                     <div key={key} 
                         onClick={()=>this.clickAudio(key)}
@@ -287,7 +296,7 @@ class MusicPlayer extends React.Component {
                         </span>
                     </div>
                 )}
-            </div> */}
+            </div>
         </div>
       )
     }

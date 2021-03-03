@@ -66,22 +66,22 @@ class NavBar extends React.Component {
                             <Navbar.Toggle aria-controls='basic-navbar-nav' />
                             <Navbar.Collapse id='basic-navbar-nav'>
                                 <Nav className='ml-auto'>
-                                    <Nav.Link  href='https://open.spotify.com/artist/0OkO3dCZRJQlXEy8kTwoox'>
+                                    <Nav.Link  href='https://open.spotify.com/artist/0OkO3dCZRJQlXEy8kTwoox' target='_blank'>
                                         <img className='social-icon' src={spotifyLogo}/>
                                     </Nav.Link>
-                                    <Nav.Link href='https://soundcloud.com/itswaitwhat'>
+                                    <Nav.Link href='https://soundcloud.com/itswaitwhat' target='_blank'>
                                         <img className='social-icon' src={soundcloudLogo}/>
                                     </Nav.Link>
-                                    <Nav.Link href='https://www.instagram.com/itswaitwhat/'>
+                                    <Nav.Link href='https://www.instagram.com/itswaitwhat/' target='_blank'>
                                         <img className='social-icon' src={igLogo}/>
                                     </Nav.Link>
-                                    <Nav.Link href='https://twitter.com/itswaitwhat'>
+                                    <Nav.Link href='https://twitter.com/itswaitwhat' target='_blank'>
                                         <img className='social-icon' src={twitterLogo}/>
                                     </Nav.Link>
-                                    <Nav.Link href='https://www.twitch.tv/itswaitwhat'>
+                                    <Nav.Link href='https://www.twitch.tv/itswaitwhat' target='_blank'>
                                         <img className='social-icon' src={twitchLogo}/>
                                     </Nav.Link>
-                                    <Nav.Link href='https://www.facebook.com/itswaitwhat'>
+                                    <Nav.Link href='https://www.facebook.com/itswaitwhat' target='_blank'>
                                         <img className='social-icon' src={fbLogo}/>
                                     </Nav.Link>
                                 </Nav>

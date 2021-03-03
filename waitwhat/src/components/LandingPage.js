@@ -9,12 +9,12 @@ class LandingPage extends React.Component {
         return (
             <div id='landing-page-container'>
                 <Row id='music-videos-section'>
-                    <Col>
+                    <Col sm={12} md={6}>
                         <ResponsiveEmbed aspectRatio='16by9'>
                             <iframe src="https://www.youtube.com/embed/EtzXluKcwSU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </ResponsiveEmbed>
-                    </Col>
-                    <Col className='music-player-container'>
+                    </Col >
+                    <Col sm={12} md={6} className='music-player-container'>
                             <MusicPlayer />
                     </Col>
                 </Row>
