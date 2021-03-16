@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import imgs from './ImageImports';
 
 class ImageGallery extends React.Component {
@@ -35,11 +35,17 @@ class ImageGallery extends React.Component {
         console.log(this.state.picList.length);
         console.log(typeof this.state.picList);
         return (
-            <div>
-                <img src={this.state.picList[this.state.index]}/>
-                <button onClick={this.onClickPrevious}> Previous </button>
-                <button onClick={this.onClickNext}> Next </button> 
-            </div>
+            <Row id='image-gallery' >
+                <Col xs={2} className='justify-content-center'>
+                    <button onClick={this.onClickPrevious}> Prev </button>
+                </Col>
+                <Col xs={8} className='image-gallery-continer'>
+                    <img src={this.state.picList[this.state.index]}/>
+                </Col>
+                <Col xs={2}>
+                    <button onClick={this.onClickNext}> Next </button>
+                </Col>
+            </Row>
         );
     }
 }

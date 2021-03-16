@@ -1,9 +1,6 @@
 body {
   background-color: black;
 }
-.App {
-  text-align: center;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -65,15 +62,16 @@ body {
   --time-line-width: 240px;
   --transition: .3s all ease;
 }
-.music-player-container {
+#music-player-container {
   font-family: 'Rubik', sans-serif;
   color: var(--base);
   display: flex;
   /* justify-content: center;
-  align-items: center; */
+  /* align-items: center; */
   /* flex-direction: column; */
-  background: #000;
-}
+  background: green;
+  height: 500px;
+} 
 .card{
   display: flex;
   flex-direction: column;
@@ -83,67 +81,86 @@ body {
   height: 100%;
   width: 100%;
   padding: 0 5px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   border-radius: var(--border-radius);
   color: var(--white);
   font-weight: 100;
   box-shadow: 0px 0px 70px 0px var(--shadow-color);
   background: var(--base);
-  overflow: hidden;
+  overflow: auto;
 }
-.demo-card {
-  float: right;
+.music-player-row {
+  height: 10%;
+}
+
+/* Current Song */
+.current-song-row {
+  height: 15%;
+}
+#current-song-img {
+  height: 100%;
+  margin: 0 auto
 }
 .current-song{
   display: flex;
   /* flex-direction: column; */
   align-items: right;
   width: 100%;
-  padding: 20px 0px;
-  border-radius: var(--border-radius);
+  /* padding: 20px 0px; */
+  height: 100%;
+  /* border-radius: var(--border-radius); */
   color: var(--base);
   background: var(--white);
 }
 audio{
   display: none;
 }
+/* Universal Music Player Elements */
 .img-wrap{
   position: relative;
   margin: 0 auto;
-  width: 270px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0px 10px 40px 0px var(--lighter-shadow);
-  float: left;
+  height: 100%;
+  width: 100%;
+  background: lightblue;
+  /* float: left; */
 }
-.img-wrap img{
+
+.img-wrap img {
   width: auto;
   height: 50%;
+  width: 50%;
+   /* position: absolute; */
+  /* top: 0;
+  left: 0; */
 }
-.song-name{
+
+.song-name, track-name{
   /* margin-top: 30px; */
   font-size: 18px;
   display: inline;
+  margin: 15px;
   /* width: 100%; */
 }
 .song-autor{
   color: var(--primary);
 }
 .time{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  display: inline-flex;
+  justify-content: right; 
+  /* margin-top: 10px; */
   width: var(--time-line-width);
 }
+/*Controls for Current Song */
 #timeline{
   position: relative;
   margin: 0 auto;
-  width: var(--time-line-width);
-  height: 5px;
+  /* width: var(--time-line-width); */
+  width: 100%;
+  height: 10px;
   background: var(--primary);
   border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
 }
 p {
   color: white;
@@ -209,43 +226,76 @@ p {
 .controls{
   margin-top: 10px;
 }
-.controls button{
+.controls button {
   color: var(--base);
   border-radius: 50%;
-  margin: 15px;
+  /* margin: 15px; */
   font-size: 18px;
   text-align: center;
   transition: 0.2s;
   cursor: pointer;
   border: none;
-  background: grey;
-  width: 50px;
-  height: 50px;
+  /* background: grey; */
+  width: 25px;
+  height: 25px;
+  display: flex;
 } 
 .controls button:focus{
   outline: none;
 }
 
-.controls button .play{
+.play{
   width: 50px;
   height: 50px;
   border: 1px solid rebeccapurple;
+  background: black;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
 }
-.controls button .play:hover{
+.play:hover{
   left: 0;
   box-shadow: 0px 0px 15px 0px  var(--lighter-shadow);
 }
-.controls button .fa-play{
+.fa-play{
   transform: translateX(2px);
 }
+.prev-next {
+  width: 10%;
+  display: flex;
+}
+.prev {
+  float: left;
+  background: yellow;
+}
+.next {
+  background: green;
+  float: right;
+  margin: 0 15px 0 0;
+}
+
 
 /*PlayList*/
+/* .track {
+  margin: 0 5px 0 5px;
+} */
+.play-list {
+  margin-top: 10px;
+  height: 100%;
+}
 .track-img{
-  width: 90px;
-  border-radius: calc( var(--border-radius) - 10px);
+  height: 100%;
+  margin-bottom: 2%;
+  float: left;
+  /* border-radius: calc( var(--border-radius) - 10px); */
   /* float: left; */
 }
-  /* .play-list{
+  /* .{
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -345,3 +395,12 @@ p {
   width: auto;
   height: 100%;
 } */
+
+/* Image Gallery */
+.image-gallery-container {
+  width: 100%;
+  vertical-align: middle;
+}
+.image-gallery-container img {
+  width: 100%;
+}

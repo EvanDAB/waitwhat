@@ -13,14 +13,14 @@ class LandingPage extends React.Component {
                         <ResponsiveEmbed aspectRatio='16by9'>
                             <iframe src="https://www.youtube.com/embed/EtzXluKcwSU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </ResponsiveEmbed>
-                    </Col >
-                    <Col sm={12} md={6} className='music-player-container'>
-                            <MusicPlayer />
                     </Col>
+                    <Col sm={12} md={6} id='music-player-container'>
+                        <MusicPlayer />
+                    </Col> 
                 </Row>
-                <Row id='image-gallery'>
-                    <Col><ImageGallery/></Col>
-                </Row>
+                
+                <div className='image-gallery-container'><ImageGallery/></div>
+                
                 <Row id='social-section'>
                     <Col id='twitter'>
                         <TwitterTimelineEmbed
