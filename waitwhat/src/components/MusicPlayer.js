@@ -7,6 +7,18 @@ class MusicPlayer extends React.Component {
     currentTime: '0:00',
     musicList: [
       {
+        name:'Julian Lamadrid - No Trouble (waitwhat remix)',  
+        img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
+        audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
+        duration: '3:27',
+      }, 
+      {
+        name:'Two Feet - Had Some Drinks (waitwhat remix)',  
+        img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
+        audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
+        duration: '3:27',
+      }, 
+      {
         name:'Alive (ft Rielle)',  
         img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
         audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
