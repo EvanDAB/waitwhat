@@ -9,13 +9,13 @@ import soundcloudLogo from '../content/icons/soundcloud-logo.gif';
 import { Nav, Navbar, NavDropdown, Row, Col,  } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import LandingPage from './LandingPage';
-import MusicPage from './MusicPage';
-import BioPage from './BioPage';
-import PressKitPage from './PressKitPage';
-import ResourcesPage from './ResourcesPage';
-import AdminPage from './AdminPage';
-
+import LandingPage from '../pages/LandingPage';
+import MusicPage from '../pages/MusicPage';
+import BioPage from '../pages/BioPage';
+import PressKitPage from '../pages/PressKitPage';
+import ResourcesPage from '../pages/ResourcesPage';
+import AdminPage from '../pages/AdminPage';
+import MerchPage from '../pages/MerchPage';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -40,7 +40,9 @@ class NavBar extends React.Component {
                                             <NavDropdown.Item>Resources</NavDropdown.Item>
                                         </LinkContainer>  
                                     </NavDropdown>
-                                    <Nav.Link href='#merch'>Merch</Nav.Link>
+                                    <LinkContainer to='/merch'>
+                                        <Nav.Link>Merch</Nav.Link>
+                                    </LinkContainer>
                                     <LinkContainer to='/bio'>
                                         <Nav.Link>Bio</Nav.Link>
                                     </LinkContainer>
@@ -96,6 +98,7 @@ class NavBar extends React.Component {
                     <Route exact path='/bio' component={BioPage}/>
                     <Route exact path='/press' component={PressKitPage}/>
                     <Route exact path='/admin' component={AdminPage}/>
+                    <Route exact path='/merch' component={MerchPage}/>
                 </Switch>
             </BrowserRouter>
             
