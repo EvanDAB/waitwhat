@@ -5,10 +5,10 @@ import ImageGallery from '../components/ImageGallery';
 class PressKitPage extends React.Component {
     render(){
         return (
-            <div>
-                <p>
+            <div className='press-kit-page'>
+                <h2 className='text-center'>
                     “Wait, what?” is at the root of all understanding.
-                </p>
+                </h2>
                 <ImageGallery/>
             </div>
         )

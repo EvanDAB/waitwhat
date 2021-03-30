@@ -4,8 +4,8 @@ import { Row, Col, ResponsiveEmbed } from 'react-bootstrap';
 class MerchPage extends React.Component {
     render() {
         return (
-            <Row>
-                <Col>Merch will be available soon! Come back later.</Col>
+            <Row id='merch-page'>
+                <Col><h2 className='text-center'>Merch will be available soon! Come back later.</h2></Col>
             </Row>
         )
     }

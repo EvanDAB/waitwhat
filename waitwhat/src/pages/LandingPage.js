@@ -7,7 +7,7 @@ import ImageGallery from '../components/ImageGallery';
 class LandingPage extends React.Component {
     render() {
         return (
-            <div id='landing-page-container'>
+            <div id='landing-page'>
                 <Row id='music-videos-section'>
                     <Col sm={12} md={6}>
                         <ResponsiveEmbed aspectRatio='16by9'>

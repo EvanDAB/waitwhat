@@ -54,7 +54,7 @@ class NavBar extends React.Component {
                         </Col>
                         <Col>
                             <LinkContainer to='' >
-                                <Navbar.Brand className='justify-content-center' href=''>
+                                <Navbar.Brand className='text-center' href=''>
                                     <img
                                     alt='“Wait, what?” is at the root of all understanding.'
                                     src={logo}

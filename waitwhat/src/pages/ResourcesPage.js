@@ -4,7 +4,7 @@ import { Row, Col, ResponsiveEmbed } from 'react-bootstrap';
 class ResourcesPage extends React.Component {
     render() {
         return (
-            <div>
+            <div id='resources-page'> 
                 <Row>
                     <Col>
                         <h4 className='text-center'>Learn Something New</h4>

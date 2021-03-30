@@ -3,11 +3,83 @@ import { Row, Col } from 'react-bootstrap';
 
 class MusicPlayer extends React.Component {
   state = {
-    index: 3,
+    index: 0,
     currentTime: '0:00',
+    pause: false,
     musicList: [
       {
-        name:'Julian Lamadrid - No Trouble (waitwhat remix)',  
+        name:'Do You Remember(feat Daramola)',  
+        img: 'https://i1.sndcdn.com/artworks-GOLQv9uzxzqjtq39-6pogUg-t500x500.jpg', 
+        // audio:'https://soundcloud.com/itswaitwhat/do-you-remember', 
+        audio: 'https://www.bensound.com/bensound-music/bensound-buddy.mp3',
+        duration: '2:34',
+        info: {
+          // ftArtist: {
+          //     name: 'Daramola',
+          //     socials: [
+            //         spotify
+            //     ]
+            // },
+          inspiration: 'so this is probably our gushiest, poppiest song yet and we love it lol. Daramola provided some excellent, catchy vocals (vocoder and all!) that were a ton of fun to work with. the beat for this track features a ton of different samples of Troy playing an old Korg Kaossilator KO-1 that Damon dug up in his garage, which gives the whole song a very unique texture. overall this one turned out super chill and groovy, and we hope you dig it :)'
+        }
+      },
+      {
+        name:'One Last Time - waitwhat x Sweez',  
+        img: 'https://i1.sndcdn.com/artworks-ww4zoN9DTYBFWLRm-YPeIIw-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/6XOko5cuKxCwVKUWpE9t9v?si=68f36de6ca914e45', duration: '3:00'
+      }, 
+      {
+        name:'Vanic - So Slow(feat K. Flay) (waitwhat remix)',  
+        img: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsoundcloud.com%2Fitswaitwhat%2Fvanic-so-slow-waitwhat-remix&psig=AOvVaw2bxe8lvxznbMYwzTsEpYZJ&ust=1614192914282000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiCt-HXgO8CFQAAAAAdAAAAABAD', 
+        audio:'https://soundcloud.com/itswaitwhat/vanic-so-slow-waitwhat-remix', duration: '2:57'
+      }, 
+      {
+        name:'Sad Boi (ft Emilia Ali)',  
+        img: 'https://i1.sndcdn.com/artworks-wzFcRymWKuYyaizn-vX13fg-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/04iEzw4RuYkEgaMcztQlst?si=30aa1e4a2f884d53', duration: '2:38'
+      }, 
+      {
+        name:'Tep No - Sippin\' on Feelings (SEPPIE & waitwhat remix)',  
+        img: 'https://i1.sndcdn.com/artworks-Ruy6LqCrfTlAlaC8-TL4e5Q-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/3xvPkG7fAdJgPJ7baeZ8Zo?si=66bc0b96c1f149a4', duration: '2:55'
+      }, 
+      {
+        name:'Samsonite and Waitwhat - Somebody (ft Kristen Scheltens)',  
+        img: 'https://ihouseu.com/wp-content/uploads/2020/06/waitwhat-Samsonite-Somebody-Feat.-Kristen-Scheltens-1.jpg', 
+        audio:'https://open.spotify.com/track/7vspS9itHJqgGRXk74HrzR?si=fb10bd454d5f400c', duration: '3:17'
+      }, 
+      {
+        name:'Dence - Fyre (waitwhat remix)',  
+        img: 'https://i1.sndcdn.com/artworks-000605772112-xmsir2-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/39HNKxo525jfwOdCh5CCw3?si=d4e1716882224832', duration: '2:29'
+      },
+      {
+        name:'MRG feat Sweez - Brokenhearted (waitwaht remix)',  
+        img: 'https://i1.sndcdn.com/artworks-BWbTfLjy4Q6fxHDF-TenSEw-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/5OHLzWBPw6q2WD42ewLH8a?si=e243713f4f504d41', duration: '2:18'
+      },
+      {
+        name:'People Change (ft JLa)',  
+        img: 'https://i1.sndcdn.com/artworks-n8F8Ty0WSgymmGtr-2z5ANQ-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/38p9K0qS0KCcAEnv1Tcf5H?si=0f7036dc1c234769', duration: '3:15'
+      },
+      {
+        name:'Memories (Middle Child X waitwhat)',  
+        img: 'https://i1.sndcdn.com/artworks-000477984969-3ubw2n-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/3WY23lIMGx0R1d1zjsfoBZ?si=ee3073d411fb402f', duration: '4:09'
+      }, 
+      {
+        name:'Doing Fine (ft Heather Summer)',  
+        img: 'https://i1.sndcdn.com/artworks-000450549630-iarsst-t500x500.jpg', 
+        audio:'https://open.spotify.com/track/5TWDxCLBBifqEAUpcZul1L?si=2c6eb4e19ca4472b', duration: '4:06'
+      },
+      {
+        name:'Fall out Boy - Sugar We\'re Going Down (waitwhat & SEPPIE remix))',  
+        img: 'https://i1.sndcdn.com/artworks-000478105290-dy5ofy-t500x500.jpg', 
+        audio:'https://soundcloud.com/itswaitwhat/sugar-were-going-down-remix', duration: '3:03'
+      },  
+      {
+        name:'Alive (ft Rielle)',  
         img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
         audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
         duration: '3:27',
@@ -19,84 +91,24 @@ class MusicPlayer extends React.Component {
         duration: '3:27',
       }, 
       {
-        name:'Alive (ft Rielle)',  
+        name: 'BEAUZ & LuxLyfe - Warning Signs (ft. TL) (waitwhat remix)',
         img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
         audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
         duration: '3:27',
-      }, 
+      },     
       {
-        name:'Fall out Boy - Sugar We\'re Going Down (waitwhat & SEPPIE remix))',  
-        img: 'https://i1.sndcdn.com/artworks-000478105290-dy5ofy-t500x500.jpg', 
-        audio:'https://soundcloud.com/itswaitwhat/sugar-were-going-down-remix', duration: '3:03'
-      }, 
+        name:'Julian Lamadrid - No Trouble (waitwhat remix)',  
+        img: 'https://i.scdn.co/image/ab67616d0000b27332d0d4b980975f3acb6af5b3', 
+        audio:'https://open.spotify.com/track/0QVT76q62DksJ9Rq4DD4DH?si=e4dc16da3e9248b0', 
+        duration: '3:27',
+      },
       {
-        name:'Doing Fine (ft Heather Summer)',  
-        img: 'https://i1.sndcdn.com/artworks-000450549630-iarsst-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/5TWDxCLBBifqEAUpcZul1L?si=2c6eb4e19ca4472b', duration: '4:06'
-      }, 
-      {
-        name:'Memories (Middle Child X waitwhat)',  
-        img: 'https://i1.sndcdn.com/artworks-000477984969-3ubw2n-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/3WY23lIMGx0R1d1zjsfoBZ?si=ee3073d411fb402f', duration: '4:09'
-      }, 
-      {
-        name:'People Change (ft JLa)',  
-        img: 'https://i1.sndcdn.com/artworks-n8F8Ty0WSgymmGtr-2z5ANQ-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/38p9K0qS0KCcAEnv1Tcf5H?si=0f7036dc1c234769', duration: '3:15'
-      }, 
-      {
-        name:'MRG feat Sweez - Brokenhearted (waitwaht remix)',  
-        img: 'https://i1.sndcdn.com/artworks-BWbTfLjy4Q6fxHDF-TenSEw-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/5OHLzWBPw6q2WD42ewLH8a?si=e243713f4f504d41', duration: '2:18'
-      }, 
-      {
-        name:'Dence - Fyre (waitwhat remix)',  
-        img: 'https://i1.sndcdn.com/artworks-000605772112-xmsir2-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/39HNKxo525jfwOdCh5CCw3?si=d4e1716882224832', duration: '2:29'
-      }, 
-      {
-        name:'Samsonite and Waitwhat - Somebody (ft Kristen Scheltens)',  
-        img: 'https://ihouseu.com/wp-content/uploads/2020/06/waitwhat-Samsonite-Somebody-Feat.-Kristen-Scheltens-1.jpg', 
-        audio:'https://open.spotify.com/track/7vspS9itHJqgGRXk74HrzR?si=fb10bd454d5f400c', duration: '3:17'
-      }, 
-      {
-        name:'Tep No - Sippin\' on Feelings (SEPPIE & waitwhat remix)',  
-        img: 'https://i1.sndcdn.com/artworks-Ruy6LqCrfTlAlaC8-TL4e5Q-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/3xvPkG7fAdJgPJ7baeZ8Zo?si=66bc0b96c1f149a4', duration: '2:55'
-      }, 
-      {
-        name:'Sad Boi (ft Emilia Ali)',  
-        img: 'https://i1.sndcdn.com/artworks-wzFcRymWKuYyaizn-vX13fg-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/04iEzw4RuYkEgaMcztQlst?si=30aa1e4a2f884d53', duration: '2:38'
-      }, 
-      {
-        name:'Vanic - So Slow(feat K. Flay) (waitwhat remix)',  
-        img: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsoundcloud.com%2Fitswaitwhat%2Fvanic-so-slow-waitwhat-remix&psig=AOvVaw2bxe8lvxznbMYwzTsEpYZJ&ust=1614192914282000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiCt-HXgO8CFQAAAAAdAAAAABAD', 
-        audio:'https://soundcloud.com/itswaitwhat/vanic-so-slow-waitwhat-remix', duration: '2:57'
-      }, 
-      {
-        name:'One Last Time - waitwhat x Sweez',  
-        img: 'https://i1.sndcdn.com/artworks-ww4zoN9DTYBFWLRm-YPeIIw-t500x500.jpg', 
-        audio:'https://open.spotify.com/track/6XOko5cuKxCwVKUWpE9t9v?si=68f36de6ca914e45', duration: '3:00'
-      }, 
-      {
-        name:'Do You Remember(feat Daramola)',  
-        img: 'https://i1.sndcdn.com/artworks-GOLQv9uzxzqjtq39-6pogUg-t500x500.jpg', 
-        // audio:'https://soundcloud.com/itswaitwhat/do-you-remember', 
-        audio: 'https://www.bensound.com/bensound-music/bensound-buddy.mp3',
-        duration: '2:34',
-        info: {
-          // ftArtist: {
-          //     name: 'Daramola',
-          //     socials: [
-          //         spotify
-          //     ]
-          // },
-          inspiration: 'so this is probably our gushiest, poppiest song yet and we love it lol. Daramola provided some excellent, catchy vocals (vocoder and all!) that were a ton of fun to work with. the beat for this track features a ton of different samples of Troy playing an old Korg Kaossilator KO-1 that Damon dug up in his garage, which gives the whole song a very unique texture. overall this one turned out super chill and groovy, and we hope you dig it :)'
-        }
-      }, 
+        name: 'Hailee Steinfeld - Starving (waitwhat remix)',
+        img: '',
+        audio: '',
+        duration: '3:02'
+      }
     ],
-    pause: false,
   };
 
   componentDidMount() {
